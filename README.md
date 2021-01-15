@@ -1,0 +1,1 @@
+The beginnings of a web based todo app. Will be using HTML, SCSS, and vanilla JS. 
