@@ -25,10 +25,35 @@ body {
   margin-top: 2em;
 }
 
+.left-panel .main-menu div {
+  padding: .2em .4em;
+  border-radius: 5px;
+}
+
+.left-panel .main-menu div:hover {
+  background-color: #4e5b6d;
+  cursor: pointer;
+}
+
 .right-panel {
   background-color: #393e46;
   padding: 1em;
   width: 800px;
   height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.right-panel span {
+  margin: .2em;
+}
+
+.right-panel span:hover {
+  background-color: #4e5b6d;
 }
 /*# sourceMappingURL=main.css.map */

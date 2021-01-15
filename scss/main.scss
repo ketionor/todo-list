@@ -28,6 +28,20 @@ body {
         margin-top: 2em;
     }
 
+    .main-menu {
+
+        div {
+            padding: .2em .4em;
+            border-radius: 5px;
+        }
+
+        div:hover {
+            background-color: lighten($background-primary, $amount: 20%);
+            cursor: pointer;
+            
+        }
+    }
+
 }
 
 .right-panel {
@@ -35,4 +49,15 @@ body {
     padding: 1em;
     width: 800px;
     height: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    span {
+        margin: .2em;
+    }
+
+    span:hover {
+        background-color: lighten($background-primary, $amount: 20%);
+    }
 }
