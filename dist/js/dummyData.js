@@ -1,29 +1,37 @@
 const gtd = {
     project1: {
-        title: "Proeject One",
+        title: "Buy a Lambo",
         status: false,
         list: [
             {
-                name: "Do something",
+                name: "Get rich",
                 status: false
             },
             {
-                name: "Do something else",
+                name: "Die trying",
                 status: false
             }
         ] 
     },
 
     project2: {
-        title: "Project Two",
+        title: "Grocery List",
         status: false,
         list: [
             {
-                name: "Do something amazing",
+                name: "Egss",
                 status: false
             },
             {
                 name: "Milk",
+                status: false
+            },
+            {
+                name: "Bread",
+                status: false
+            },
+            {
+                name: "Chicken",
                 status: false
             }
         ] 

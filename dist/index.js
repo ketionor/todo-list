@@ -65,11 +65,12 @@ const projects = document.querySelectorAll('.project');
 
 projects.forEach(() => addEventListener('click', e => {
     let clickedName = e.target.innerHTML;
-    if (gtd.hasOwnProperty(clickedName)) {
-        project = gtd[clickedName];
-        console.log(project);
-        displayList(project);
-    }
+    let array = Object.entries(gtd);
+    array.forEach(element => {
+        if(element[1].title == clickedName) {
+            displayList(element[1]);
+        }
+    })
 }))
 
 
