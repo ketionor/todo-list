@@ -8,6 +8,16 @@ const displayList = (project) => {
     rightPanel.innerHTML = '';
     let title = document.createElement('h2');
     title.innerHTML = project.title;
+
+    //copied this thing
+    function getKeyByValue(object, value) {
+        return Object.keys(object).find(key => object[key] === value);
+      }
+
+    let id = getKeyByValue(gtd, project);
+    console.log(id);
+
+    title.id = id;
     rightPanel.appendChild(title);
 
     for (i=0; i<project.list.length; i++) {
@@ -40,7 +50,7 @@ const todoFactory = (project, name) => {
         name: name,
         status: false
     }
-    gtd[project].list.push(todo);
+    project.list.push(todo);
 }
 
 //Populate left panel with all projects
@@ -72,6 +82,28 @@ projects.forEach(() => addEventListener('click', e => {
         }
     })
 }))
+
+const addTodoButton = document.querySelector('.add-todo');
+addTodoButton.addEventListener('click', () => {
+    let form = document.querySelector('.add-form');
+    form.style.display = "block";
+})
+
+const cancelButton = document.querySelector('.cancel-button');
+cancelButton.addEventListener('click', () => {
+    let form = document.querySelector('.add-form');
+    form.style.display = "none";
+})
+
+const submitButton = document.querySelector('.submit-button');
+submitButton.addEventListener('click', () => {
+    let input = document.getElementById('todo-title').value;
+    let currentProject = document.querySelector('h2').id;
+    console.log(gtd[currentProject], input);
+    todoFactory(gtd[currentProject], input);
+    displayList(gtd[currentProject]);
+    
+})
 
 
 

@@ -1,6 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+* h2 {
+  font-family: 'Oswald', sans-serif;
 }
 
 body {
@@ -16,16 +21,16 @@ body {
   display: flex;
   height: 100vh;
   width: 100vw;
+  position: relative;
 }
 
 .left-panel {
   width: 200px;
-  padding: 1em;
+  padding: 3em 0 0 1em;
   background-color: #232931;
 }
 
 .left-panel .main-menu .inbox {
-  margin: 1em 0;
   color: #4ecca3;
 }
 
@@ -49,7 +54,7 @@ body {
 
 .right-panel {
   background-color: #393e46;
-  padding: 1em;
+  padding: 3em 0 0 3em;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,11 +65,60 @@ body {
           flex-direction: column;
 }
 
+.right-panel h2 {
+  margin-bottom: 1em;
+}
+
 .right-panel span {
-  margin: .2em;
+  margin: .2em 0 .2em 0;
+  border-radius: 5px;
+  max-width: 500px;
+}
+
+.right-panel span input {
+  margin-right: 10px;
 }
 
 .right-panel span:hover {
   background-color: #4e5b6d;
+}
+
+.add-todo {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  padding: 1.5em;
+  background-color: #4ecca3;
+  border-radius: 5px;
+  border: none;
+  color: #eeeeee;
+}
+
+.add-todo:hover {
+  background-color: #288c6b;
+  cursor: pointer;
+}
+
+.add-form {
+  position: absolute;
+  display: none;
+  bottom: 5em;
+  right: 1em;
+  background-color: #232931;
+  padding: 1.5em;
+  border-radius: 5px;
+}
+
+.add-form button {
+  padding: 1.5em;
+  background-color: #4ecca3;
+  border-radius: 5px;
+  border: none;
+  color: #eeeeee;
+}
+
+.add-form button:hover {
+  background-color: #288c6b;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
