@@ -1,36 +1,3 @@
-const gtd = {
-    project1: {
-        title: "Proeject One",
-        status: false,
-        list: [
-            {
-                name: "Do something",
-                status: false
-            },
-            {
-                name: "Do something else",
-                status: false
-            }
-        ] 
-    },
-
-    project2: {
-        title: "Project Two",
-        status: false,
-        list: [
-            {
-                name: "Do something amazing",
-                status: false
-            },
-            {
-                name: "Milk",
-                status: false
-            }
-        ] 
-    },
-};
-
-
 //generates the selected list onto the right panel
 const displayList = (project) => {
     let todoList = [];
@@ -78,22 +45,24 @@ const todoFactory = (project, name) => {
 
 //Populate left panel with all projects
 const populateProjects = (projectsList) => {
+    let stepOne = Object.entries(projectsList);
     let projectsListSection = document.querySelector('.projects');
     projectsListSection.innerHTML = '';
-    projectsList.forEach(project => {
+    stepOne.forEach(project => {
         let p = document.createElement('p');
-        p.innerHTML = project;
+        p.innerHTML = project[1].title;
         p.classList = 'project';
         projectsListSection.appendChild(p);
     });
 }
 
-populateProjects(Object.keys(gtd));
+populateProjects(gtd);
 displayList(gtd.project1);
 
 //for some reason this function triggers twice, console.log remains in here as a reminder of 
 //what exactly the error is
 const projects = document.querySelectorAll('.project');
+
 projects.forEach(() => addEventListener('click', e => {
     let clickedName = e.target.innerHTML;
     if (gtd.hasOwnProperty(clickedName)) {
