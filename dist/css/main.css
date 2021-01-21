@@ -99,17 +99,17 @@ body {
   cursor: pointer;
 }
 
-.add-form {
+.add-form, .choice-form {
   position: absolute;
   display: none;
-  bottom: 5em;
+  bottom: 1em;
   right: 1em;
   background-color: #232931;
   padding: 1.5em;
   border-radius: 5px;
 }
 
-.add-form button {
+.add-form button, .choice-form button {
   padding: 1.5em;
   background-color: #4ecca3;
   border-radius: 5px;
@@ -117,7 +117,7 @@ body {
   color: #eeeeee;
 }
 
-.add-form button:hover {
+.add-form button:hover, .choice-form button:hover {
   background-color: #288c6b;
   cursor: pointer;
 }

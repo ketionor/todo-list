@@ -96,7 +96,7 @@ body {
 .add-form {
     position: absolute;
     display: none;
-    bottom: 5em;
+    bottom: 1em;
     right: 1em;
     background-color: $background-primary;
     padding: 1.5em;
@@ -115,4 +115,9 @@ body {
         }
     }
 
+}
+
+.choice-form {
+    @extend .add-form;
+    
 }

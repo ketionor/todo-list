@@ -26,12 +26,16 @@
             </div>
         </div>
         <div class="right-panel"></div>
-        <button class="add-todo">Add Todo</button>
+        <button class="add-todo">...</button>
         <div class="add-form">
             <p>Add Todo</p>
-            <input type="text" id="todo-title">
+            <input type="text" id="todo-title" onfocus="this.value=''">
             <button class="submit-button">Submit</button>
             <button class="cancel-button">Cancel</button>
+        </div>
+        <div class="choice-form">
+            <button class="project-button choice-button" id="project-button">Project</button>
+            <button class="task-button choice-button" id="task-button">Task</button>
         </div>
     </div>
 </body>
