@@ -13,7 +13,6 @@ class ProjectDatabase {
     populateProjects(parentElement) {
         this.projectList.forEach(project => {
             let projectName = Object.entries(project)[0][1];
-            console.log(projectName);
             let p = document.createElement('p');
             p.innerHTML = projectName;
             p.classList = 'project';
