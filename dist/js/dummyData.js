@@ -1,39 +1,11 @@
-const gtd = {
-    project1: {
-        title: "Buy a Lambo",
-        status: false,
-        list: [
-            {
-                name: "Get rich",
-                status: false
-            },
-            {
-                name: "Die trying",
-                status: false
-            }
-        ] 
-    },
+var database = new ProjectDatabase('dummy user');
 
-    project2: {
-        title: "Grocery List",
-        status: false,
-        list: [
-            {
-                name: "Egss",
-                status: false
-            },
-            {
-                name: "Milk",
-                status: false
-            },
-            {
-                name: "Bread",
-                status: false
-            },
-            {
-                name: "Chicken",
-                status: false
-            }
-        ] 
-    },
-};
+var project1 = new Project(database, 'buy a lambo');
+project1.addTask('get rich');
+project1.addTask('die trying'); 
+
+var project2 = new Project(database, 'grocery list');
+project2.addTask('eggs');
+project2.addTask('milk');
+project2.addTask('bread');
+project2.addTask('chicken');
