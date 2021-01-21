@@ -1,11 +1,23 @@
 var database = new ProjectDatabase('dummy user');
 
-var project1 = new Project(database, 'buy a lambo');
-project1.addTask('get rich');
-project1.addTask('die trying'); 
+console.log(database.projectList);
 
-var project2 = new Project(database, 'grocery list');
-project2.addTask('eggs');
-project2.addTask('milk');
-project2.addTask('bread');
-project2.addTask('chicken');
+database.createProject('project1');
+database.projectList.forEach(project => {
+    if(project.name === 'project1') {
+        project.addTask('get rich');
+        project.addTask('die tryin');
+    }
+})
+
+database.createProject('project2');
+database.projectList.forEach(project => {
+    if(project.name === 'project2') {
+        project.addTask('eggs');
+        project.addTask('milk');
+        project.addTask('bread');
+        project.addTask('chicken');
+    }
+})
+
+console.log(database.projectList);

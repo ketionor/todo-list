@@ -1,16 +1,42 @@
+
 class ProjectDatabase {
     constructor(userName) {
         this.name = userName;
         this.projectList = [];
     }
+
+    createProject(projectName) {
+        let project = new Project(projectName);
+        this.projectList.push(project);
+    }
+
+    populateProjects(parentElement) {
+        this.projectList.forEach(project => {
+            let projectName = Object.entries(project)[0][1];
+            console.log(projectName);
+            let p = document.createElement('p');
+            p.innerHTML = projectName;
+            p.classList = 'project';
+            parentElement.appendChild(p);
+        })
+    }
+
+    retrieveProject(projectName) {
+        let returnedProject;
+        this.projectList.forEach(project => {
+            if (project.name === projectName) {
+                returnedProject =  project;
+            }
+        })
+        return returnedProject;
+    }
 }
 
 class Project {
-    constructor(projectDatabase, projectName) {
+    constructor(projectName) {
         this.name = projectName;
         this.list = [];
         this.status = false;
-        projectDatabase.projectList.push(projectName);
     }
 
     addTask(task) {

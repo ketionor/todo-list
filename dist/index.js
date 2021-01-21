@@ -8,28 +8,20 @@ const updateDisplay = (project) => {
     project.displayList(rightPanel);
 
     //update left panel
-    let projectsListSection = document.querySelector('.projects');
+    let projectsListSection = document.querySelector('.projects-area');
     projectsListSection.innerHTML = '';
 
-    database.projectList.forEach(item => {
-       let p = document.createElement('p');
-       p.innerHTML = item;
-       projectsListSection.appendChild(p);
-    })
+    database.populateProjects(projectsListSection);
 }
 
-//for some reason this function triggers twice, console.log remains in here as a reminder of 
-//what exactly the error is
-const projects = document.querySelectorAll('.project');
+updateDisplay(database.projectList[0]);
 
-projects.forEach(() => addEventListener('click', e => {
+//for some reason this function triggers twice
+const listOfProjects = document.querySelectorAll('.project');
+listOfProjects.forEach(() => addEventListener('click', e => {
     let clickedName = e.target.innerHTML;
-    let array = Object.entries(gtd);
-    array.forEach(element => {
-        if(element[1].title == clickedName) {
-            displayList(element[1]);
-        }
-    })
+    let project = database.retrieveProject(clickedName);
+    updateDisplay(project);
 }))
 
 const addTodoButton = document.querySelector('.add-todo');
@@ -55,4 +47,4 @@ submitButton.addEventListener('click', () => {
 })
 
 
-updateDisplay(project1);
+
